@@ -1,0 +1,64 @@
+import jdk.internal.dynalink.beans.StaticClass;
+
+import java.util.Scanner;
+
+public class overload_method {
+    public static void main(String[] args) {
+        Scanner user_input = new Scanner(System.in);
+        int choice = 0;
+        String user_info = "";
+
+        while (0==0){
+            System.out.println("Are you a business or residential customer? \n" +
+                    "1. Business \n" +
+                    "2. Residential \n" +
+                    "9. Exit");
+
+            // Based on the user's response, the user will be asked for their
+            // information.
+            choice = user_input.nextInt();
+
+            // Choice 1 will get 3 inputs from the user, which are sent to
+            // customer_info, where the info will be confirmed, and a message
+            // displaying what type of customer was entered.
+            switch (choice){
+                case 1: System.out.println("Business name: ");
+                String business_name = user_input.next();
+                System.out.println("Contact Name: ");
+                String contact_name = user_input.next();
+                System.out.println("Contact number");
+                String contact_number = user_input.next();
+                String customer_type = customer_info(business_name,contact_name,contact_number);
+                System.out.println(customer_type);
+                break;
+                // Choice 2 will get 2 inputs from the user, which are sent to
+                // customer_info, where the info will be confirmed, and a message
+                // displaying what type of customer was entered.
+                case 2: System.out.println("Your name:");
+                String user_name = user_input.next();
+                System.out.println("Your phone number:");
+                String user_number = user_input.next();
+                customer_type = customer_info(user_name, user_number);
+                System.out.println(customer_type);
+                break;
+
+                case 9: System.exit(0);
+
+            }
+
+        }
+    }
+    static String customer_info(String business_name, String contact_name, String contact_number){
+        System.out.println("Business Name: " + business_name + "\n" +
+        "Contact Name: " + contact_name + "\n" +
+        "Contact Number: " + contact_number);
+        String customer_type = "Business customer has been entered.";
+        return customer_type;
+    }
+    static String customer_info(String user_name, String user_number){
+        System.out.println("Your Name: " + user_name + "\n"+
+        "Your phone number: " + user_number);
+        String customer_type = "Residential customer has been entered.";
+        return customer_type;
+    }
+}
