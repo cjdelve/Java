@@ -1,0 +1,16 @@
+package com.arrays.java;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // Initialize the array hotdog_stand to contain string values.
+        String[] hotdog_stand =
+                // Fill the array at the time of init.
+                {"1. Buns","2. Sausage", "3. Ketchup", "4. Relish", "5. Mustard"};
+
+        // For each item in the hotdog_stand array, print that value.
+        for (String item : hotdog_stand) {
+            System.out.println("Item " + item);
+        }
+        }
+    }
