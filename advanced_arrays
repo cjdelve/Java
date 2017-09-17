@@ -1,0 +1,237 @@
+import java.util.Scanner;
+
+public class two_D_array {
+    public static void main(String[] args) {
+
+        // Initialize each item to have 1 unit of inventory.
+        String[][] items = new String[5][2];
+        items[0][0] = "Buns";
+        items[0][1] = "1";
+        items[1][0] = "Sausage";
+        items[1][1] = "1";
+        items[2][0] = "Ketchup";
+        items[2][1] = "1";
+        items[3][0] = "Relish";
+        items[3][1] = "1";
+        items[4][0] = "Mustard";
+        items[4][1] = "1";
+        Scanner user_input = new Scanner(System.in);
+        int choice = 0;
+
+        // Repeat the menu options until the user decides to exit.
+        while (0 == 0) {
+
+            // 3 main menu options.
+            System.out.println("USER MENU \n");
+            System.out.println("1. See inventory");
+            System.out.println("2. Update inventory");
+            System.out.println("3. See an items inventory");
+            System.out.println("9. Exit");
+
+            // Recieve user's input.
+            choice = user_input.nextInt();
+
+            // If the user would like to see the inventory off all items, print
+            // each item as well as the inventory for the same.
+            if (choice == 1) {
+                for (int i = 0; i < items.length; i++) {
+                    for (int j = 0; j < items[i].length; j++) {
+                        System.out.print(items[i][j]);
+                        if (j < items[i].length - 1) System.out.print(" ");
+                    }
+                    System.out.println();
+                }
+            }
+            // If the user would like to update the inventory on an item,
+            // ask which item.
+            else if (choice == 2) {
+                System.out.println("Which item would you like to update? \n" +
+                        "1. Buns \n" +
+                        "2. Sausage \n" +
+                        "3. Ketchup \n" +
+                        "4. Relish \n" +
+                        "5. Mustard \n" +
+                        "9. Exit; ");
+
+                choice = user_input.nextInt();
+
+                // Add or remove inventory units for the specified item. Repeat for all.
+                if (choice == 1) {
+                    System.out.println("1. Add inventory \n" +
+                            "2. Subtract inventory \n" +
+                            "9. Exit");
+                    choice = user_input.nextInt();
+                    if (choice == 1) {
+                        System.out.println("Add how many units?");
+                        choice = user_input.nextInt();
+                        items[0][1] = String.valueOf(Integer.parseInt(items[0][1]) + choice);
+                        // System.out.println(items[0][1]);
+                    } else if (choice == 2) {
+
+                        System.out.println("Remove how many units?");
+                        choice = user_input.nextInt();
+                        if ((Integer.parseInt(items[0][1]) - choice) < 0) {
+                            System.out.println("Removing that many units brings count to less than 0 \n" +
+                                    "item inventory will be set to 0.");
+                            items[0][1] = "0";
+
+                            // System.out.println(items[0][1]);
+                        } else {
+                            items[0][1] = String.valueOf(Integer.parseInt(items[0][1]) - choice);
+                            System.out.println(items[0][1]);
+                        }
+
+                    } else if (choice == 9) {
+                        break;
+                    }
+
+                } else if (choice == 2) {
+                    System.out.println("1. Add inventory \n" +
+                            "2. Subtract inventory \n" +
+                            "9. Exit");
+                    choice = user_input.nextInt();
+                    if (choice == 1) {
+                        System.out.println("Add how many units?");
+                        choice = user_input.nextInt();
+                        items[0][1] = String.valueOf(Integer.parseInt(items[0][1]) + choice);
+                        // System.out.println(items[0][1]);
+                    } else if (choice == 2) {
+
+                        System.out.println("Remove how many units?");
+                        choice = user_input.nextInt();
+                        if ((Integer.parseInt(items[0][1]) - choice) < 0) {
+                            System.out.println("Removing that many units brings count to less than 0 \n" +
+                                    "item inventory will be set to 0.");
+                            items[0][1] = "0";
+
+                            // System.out.println(items[0][1]);
+                        } else {
+                            items[0][1] = String.valueOf(Integer.parseInt(items[0][1]) - choice);
+                            System.out.println(items[0][1]);
+                        }
+
+                    } else if (choice == 9) {
+                        break;
+                    }
+
+                } else if (choice == 3) {
+                    System.out.println("1. Add inventory \n" +
+                            "2. Subtract inventory \n" +
+                            "9. Exit");
+                    choice = user_input.nextInt();
+                    if (choice == 1) {
+                        System.out.println("Add how many units?");
+                        choice = user_input.nextInt();
+                        items[0][1] = String.valueOf(Integer.parseInt(items[0][1]) + choice);
+                        // System.out.println(items[0][1]);
+                    } else if (choice == 2) {
+
+                        System.out.println("Remove how many units?");
+                        choice = user_input.nextInt();
+                        if ((Integer.parseInt(items[0][1]) - choice) < 0) {
+                            System.out.println("Removing that many units brings count to less than 0 \n" +
+                                    "item inventory will be set to 0.");
+                            items[0][1] = "0";
+
+                            // System.out.println(items[0][1]);
+                        } else {
+                            items[0][1] = String.valueOf(Integer.parseInt(items[0][1]) - choice);
+                            System.out.println(items[0][1]);
+                        }
+
+                    } else if (choice == 9) {
+                        break;
+                    }
+                } else if (choice == 4) {
+                    System.out.println("1. Add inventory \n" +
+                            "2. Subtract inventory \n" +
+                            "9. Exit");
+                    choice = user_input.nextInt();
+                    if (choice == 1) {
+                        System.out.println("Add how many units?");
+                        choice = user_input.nextInt();
+                        items[0][1] = String.valueOf(Integer.parseInt(items[0][1]) + choice);
+                        // System.out.println(items[0][1]);
+                    } else if (choice == 2) {
+
+                        System.out.println("Remove how many units?");
+                        choice = user_input.nextInt();
+                        if ((Integer.parseInt(items[0][1]) - choice) < 0) {
+                            System.out.println("Removing that many units brings count to less than 0 \n" +
+                                    "item inventory will be set to 0.");
+                            items[0][1] = "0";
+
+                            // System.out.println(items[0][1]);
+                        } else {
+                            items[0][1] = String.valueOf(Integer.parseInt(items[0][1]) - choice);
+                            System.out.println(items[0][1]);
+                        }
+
+                    } else if (choice == 9) {
+                        break;
+                    }
+                } else if (choice == 5) {
+                    System.out.println("1. Add inventory \n" +
+                            "2. Subtract inventory \n" +
+                            "9. Exit");
+                    choice = user_input.nextInt();
+                    if (choice == 1) {
+                        System.out.println("Add how many units?");
+                        choice = user_input.nextInt();
+                        items[0][1] = String.valueOf(Integer.parseInt(items[0][1]) + choice);
+                        // System.out.println(items[0][1]);
+                    } else if (choice == 2) {
+
+                        System.out.println("Remove how many units?");
+                        choice = user_input.nextInt();
+                        if ((Integer.parseInt(items[0][1]) - choice) < 0) {
+                            System.out.println("Removing that many units brings count to less than 0 \n" +
+                                    "item inventory will be set to 0.");
+                            items[0][1] = "0";
+
+                            // System.out.println(items[0][1]);
+                        } else {
+                            items[0][1] = String.valueOf(Integer.parseInt(items[0][1]) - choice);
+                            System.out.println(items[0][1]);
+                        }
+
+                    }
+
+                }
+
+
+            }
+            // If the user wants to see a specific item, display each
+            // item.
+            else if (choice== 3){
+                System.out.println("Which item would you like to see? \n" +
+                        "1. Buns \n" +
+                        "2. Sausage \n" +
+                        "3. Ketchup \n" +
+                        "4. Relish \n" +
+                        "5. Mustard \n" +
+                        "9. Exit; ");
+                choice = user_input.nextInt();
+
+                // If the user picks an item from the given menu, use
+                // that input to display that item, as well as the
+                // remaining inventory.
+                if (choice >= 1 & 5 >= choice){
+                    System.out.println("Item: " + items[(choice-1)][0] +
+                            " Inventory units remaining: " +
+                            items[(choice-1)][1]);
+                }
+                else if (choice ==9){
+                    break;
+                }
+                else {
+                    System.out.println("Invalid entry");
+                }
+
+            }
+            else if (choice == 9) {
+                break;
+            }
+        }
+    }
+}
