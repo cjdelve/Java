@@ -1,0 +1,94 @@
+import java.util.Scanner;
+
+public class methods {
+    public static void main(String[] args) {
+        while(0==0){
+            // Initialize an empty variable for user values pertaining to the
+            // different shapes.
+            double choice = 0;
+
+            // Init an empty variable to take the user's main menu selection.
+            int menu_choice = 0;
+
+            // Init a scanner variable to retrieve user input.
+            Scanner user_input = new Scanner(System.in);
+            System.out.println("Please select a shape to find it's area: \n" +
+                    "1. Square \n" +
+                    "2. Circle \n" +
+                    "3. Rectangle \n" +
+                    "4. Triangle \n" +
+                    "9. Exit");
+            menu_choice = user_input.nextInt();
+            switch (menu_choice){
+                case 1: System.out.println("Enter the length of 2 sides: ");
+                double side1 = choice =user_input.nextDouble();
+                double side2 = choice = user_input.nextDouble();
+                if (side1 != side2){
+                    System.out.println("A square's sides are always equal, try again");
+                }
+                else{
+                    square(side1,side2);
+                }
+                break;
+
+                case 2: System.out.println("Please enter the radius of your circle");
+                double radius = choice = user_input.nextDouble();
+                circle(radius);
+                break;
+
+                case 3: System.out.println("Please enter 2 sides of your rectangle");
+                side1 = choice = user_input.nextDouble();
+                side2 = choice = user_input.nextDouble();
+                rectangle(side1,side2);
+                break;
+
+                case 4: System.out.println("Please enter the height and base of your triangle");
+                System.out.println("Height: ");
+                double height = choice = user_input.nextDouble();
+                System.out.println("Base: ");
+                double base = choice = user_input.nextDouble();
+                triangle(base, height);
+                break;
+
+                case 9: System.exit(0);
+
+            }
+        }
+    }
+    // method: square.
+    //
+    // Receives the side 1 and 2 arguments, multiplies them and displays the
+    // area of that square.
+    private static void square(double side1, double side2){
+        double result = side1 * side2;
+        System.out.println("The area of your square is: " + result);
+    }
+
+    // method: circle
+    //
+    // Receives the radius argument from the user, uses (pi)r^2 to find and
+    // display the area of that circle.
+    private static void circle(double radius){
+        double result = 3.14 * (radius*radius);
+
+        System.out.println("The area of your circle is: " + result);
+    }
+
+    // method: rectangle
+    //
+    // Receives side 1 and 2, multiplies them, and displays the area of the
+    // rectangle.
+    private static void rectangle(double side1, double side2){
+        double result = side1 * side2;
+        System.out.println("The area of your rectangle is: " + result);
+    }
+
+    // method: triangle
+    //
+    // Receives the base and height measurements, and uses (.5(base)) * H
+    // to find and display the triangle's area.
+    private static void triangle(double base, double height){
+        double result = (.5 * base) * height;
+        System.out.println("The area of your triangle is: " + result);
+    }
+}
