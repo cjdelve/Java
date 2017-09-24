@@ -1,0 +1,31 @@
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.Scanner;
+
+public class full_moon {
+    public static void main(String[] args) {
+
+        // Init scanner for user input.
+        Scanner user_input = new Scanner(System.in);
+
+        // Set and format the local date.
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy");
+
+        //Set date of next full moon.
+        LocalDate moon_date = LocalDate.of(2017,10,5);
+
+        // Assign today's date.
+        String todays_date = today.format(formatter);
+        String full_moon_date = moon_date.format(formatter);
+
+        // How many days until the next full moon
+        long days_to_moon = today.until(moon_date, ChronoUnit.DAYS);
+
+        System.out.println("Today's date is " + todays_date);
+        System.out.println("The next full moon will be " + full_moon_date + "," +
+                " which is in " + days_to_moon + " days");
+
+    }
+}
