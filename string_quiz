@@ -1,0 +1,88 @@
+import java.util.Scanner;
+
+public class string_quiz {
+    public static void main(String[] args) {
+        Scanner user_input = new Scanner(System.in);
+        boolean response;
+        int correct_score = 0;
+        String correct1 = "No, Luke, I am your father.";
+        String correct2 = "Rebellions are built on hope.";
+        String correct3 = "Do, or do not, there is no try.";
+        String correct4 = "There's always a bigger fish.";
+        String correct5 = "Let the wookie win.";
+
+        System.out.println("Fill in the blanks: ");
+        System.out.println("Question 1: \n");
+        System.out.println("No, Luke, I am your ______.");
+        String choice = user_input.next();
+        String user_answer = "No, Luke, I am your " + choice + ".";
+
+        response = correct1.equals(user_answer);
+        if(response){
+            correct_score += 1;
+            System.out.println("Correct!");
+        }
+        else{
+            System.out.println("Wrong");
+        }
+
+        // Question 2
+        System.out.println("Question 2: \n");
+        System.out.println("_____ are built on hope.");
+        choice = user_input.next();
+        user_answer = choice + " are built on hope.";
+
+        response = correct2.equals(user_answer);
+        if(response){
+            correct_score += 1;
+            System.out.println("Correct!");
+        }
+        else{
+            System.out.println("Wrong");
+        }
+        // Question 3
+        System.out.println("Question 3: \n");
+        System.out.println("Do, or do not, there is no ___.");
+        choice = user_input.next();
+        user_answer = "Do, or do not, there is no " + choice + ".";
+
+        response = correct3.equals(user_answer);
+        if(response){
+            correct_score += 1;
+            System.out.println("Correct!");
+        }
+        else{
+            System.out.println("Wrong");
+        }
+        // Question 4
+        System.out.println("Question 4: \n");
+        System.out.println("There's always a bigger ___.");
+        choice = user_input.next();
+        user_answer = "There's always a bigger " + choice + ".";
+
+        response = correct4.equals(user_answer);
+        if(response){
+            correct_score += 1;
+            System.out.println("Correct!");
+        }
+        else{
+            System.out.println("Wrong");
+        }
+        // Question 5
+        System.out.println("Question 5: \n");
+        System.out.println("Let the ___ win.");
+        choice = user_input.next();
+        user_answer = "Let the " + choice + " win.";
+
+        response = correct5.equals(user_answer);
+        if(response){
+            correct_score += 1;
+            System.out.println("Correct!");
+        }
+        else{
+            System.out.println("Wrong");
+        }
+
+        System.out.println("You got a total of " + correct_score + " correct!");
+    }
+}
