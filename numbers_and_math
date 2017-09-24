@@ -1,0 +1,57 @@
+package com.arrays.java;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        values();
+    }
+    public static void values(){
+        // Init an empty array to hold the user's items.
+        // double[] raw_prices = {};
+        ArrayList<Double> raw_prices = new ArrayList<>();
+        Scanner user_input = new Scanner(System.in);
+        double choice = 0.00;
+
+        // Counter to display item number
+        Double counter = 0.00;
+
+        while(0==0){
+
+            // Print the prompt to the user.
+            System.out.println("Please enter the price of the next item \n " +
+                            "or 0 to Exit");
+
+            // Retrieve the input from the user, formatted as a double.
+            choice = user_input.nextDouble();
+            if(choice == 0.00){
+                break;
+            }
+            // choice = user_input.nextDouble();
+
+            // Add each input into the array holding the items.
+            raw_prices.add(choice);
+            // counter += 1;
+
+        }
+
+        // Add each item from the user together.
+        for (Double item : raw_prices) {
+            counter += item;
+        }
+
+        // create a variable for each value to be displayed, all based off the
+        // raw total.
+        Double total_tax = counter * .025;
+        Double total_w_tax = counter + total_tax;
+        Double recc_tip = counter * .175;
+
+        // Print each type of total, formatting each to show 2 decimal places.
+        System.out.println("Total: " + " $" + String.format("%.2f", counter));
+        System.out.println("Taxes: " + " $" + String.format("%.2f", total_tax));
+        System.out.println("Total plus tax: " + " $" + String.format("%.2f", total_w_tax));
+        System.out.println("Recommended tip: " + " $" + String.format("%.2f", recc_tip));
+    }
+}
