@@ -1,0 +1,49 @@
+package com.objects.java;
+
+public class contacts {
+    // Name
+    // Number
+    // Shift
+    // Initialize variables.
+    private String emp_name;
+    private int emp_number;
+    private int shift;
+
+    // Create contacts class to accept employee info.
+    public contacts(String emp_name, int emp_number, int shift){
+        this.emp_name = emp_name;
+        this.emp_number = emp_number;
+        this.shift = shift;
+    }
+
+    // Set all variables.
+    public void setEmp_name(String emp_name){
+        this.emp_name = emp_name;
+    }
+    public void setEmp_number(int emp_number){
+        this.emp_number = emp_number;
+    }
+    public void setShift(int shift){
+        this.shift = shift;
+    }
+
+    // Get all variables.
+    public String getEmp_name() {
+        return emp_name;
+    }
+
+    public int getEmp_number() {
+        return emp_number;
+    }
+
+    public int getShift() {
+        return shift;
+    }
+
+    // Method to print all information.
+    public void printInfo(){
+        System.out.println("Contact Name: " + this.emp_name + "\n");
+        System.out.println("Contact Shift: " + this.shift + "\n");
+        System.out.println(("Employee number: " + this.emp_number));
+    }
+}
