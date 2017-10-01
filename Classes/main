@@ -1,0 +1,22 @@
+package com.objects.java;
+
+public class Main {
+
+    public static void main(String[] args) {
+    // create objects for each person.
+	contacts person1 = new contacts("Bruce Wayne", 1234, 3);
+
+	contacts person2 = new contacts("Dick Grayson", 4321, 2);
+
+	contacts person3 = new contacts("Tim Drake", 1423, 1);
+
+	// Call print method.
+	person1.printInfo();
+    System.out.println("\n");
+
+    person2.printInfo();
+    System.out.println("\n");
+
+    person3.printInfo();
+    }
+}
