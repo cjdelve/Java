@@ -1,0 +1,16 @@
+package com.objects.java;
+
+public enum employeeType {
+    ADMINISTRATION("Administration"),PRODUCTION("Production"), SALES("Sales"),
+    MAINTENANCE("Maintenance"), TECHNICAL("Technical"), SECRETARIAL("Secretarial");
+    private String type;
+
+    employeeType(String type){
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return type;
+    }
+}
