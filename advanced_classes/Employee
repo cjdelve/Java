@@ -1,0 +1,171 @@
+package com.objects.java;
+
+public class Employee {
+
+    private String name;
+    private employeeType position;
+    private Boolean salary;
+    private Double pay;
+    private Integer shift;
+    private String date;
+
+    public Employee(String name, employeeType position, Boolean salary, Double pay, Integer shift, String date) {
+        this.name = name;
+        this.position = position;
+        this.salary = salary;
+        this.pay = pay;
+        this.shift = shift;
+        this.date = date;
+    }
+
+    // Set all variables
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPosition(employeeType position) {
+        this.position = position;
+    }
+
+    public void setSalary(Boolean salary) {
+        this.salary = salary;
+    }
+
+    public void setPay(Double pay) {
+        this.pay = pay;
+    }
+
+    public void setShift(Integer shift) {
+        this.shift = shift;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public employeeType getPosition() {
+        return position;
+    }
+
+    public Boolean getSalary() {
+        return salary;
+    }
+
+    public Double getPay() {
+        return pay;
+    }
+
+    public Integer getShift() {
+        return shift;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void calculate(Double hours) {
+
+        // Paycheck initialized with 2 decimal places.
+        double paycheck = 0.00;
+
+        // If the employee is salary, the only pay multiplier will be shift.
+        // Salary will cap out at being paid for 40 hours work.
+        if(this.salary) {
+            paycheck = 40 * this.pay;
+            switch (this.shift) {
+                case 1:
+                    // paycheck = hours * this.pay;
+                    break;
+
+                case 2:
+                    paycheck = paycheck + (paycheck * .05);
+                    break;
+
+                case 3:
+                    paycheck = paycheck + (paycheck * .10);
+                    break;
+            }
+        }
+        // If the employee is hourly, shift and overtime will dictate multipliers.
+        else{
+            switch (this.shift){
+                case 1:
+                    // If no OT worked, calculate normal pay.
+                    if(hours < 41){
+                        paycheck = hours * this.pay;
+                        break;
+                    }
+                    else{
+                        // overtime hours.
+                        double overtime = hours - 40;
+                        // Pay for first 40 hours.
+                        double first_forty = hours * this.pay;
+                        double OT_pay = overtime * (this.pay * 1.5);
+
+                        paycheck = OT_pay + first_forty;
+                        break;
+                    }
+                case 2:
+                    // If no OT worked, calculate normal pay.
+                    if(hours < 41){
+                        // Boosted pay.
+
+                        double boosted = this.pay + (this.pay * (.05));
+
+                        paycheck = hours * boosted;
+                        break;
+                    }
+                    else {
+                        // Boosted pay.
+
+                        double boosted = this.pay + (this.pay * (.05));
+                        // System.out.println(boosted);
+                        // overtime hours.
+                        double overtime = hours - 40;
+                        // Pay for first 40 hours.
+                        double first_forty = 40 * boosted;
+                        double OT_pay = overtime * (boosted* 1.5);
+
+                        paycheck = OT_pay + first_forty;
+                        break;
+                    }
+                case 3:
+                    // If no OT worked, calculate normal pay.
+                    if(hours < 41){
+                        // Boosted pay.
+
+                        double boosted = this.pay + (this.pay * (.10));
+
+                        paycheck = hours * (boosted);
+                        break;
+                    }
+                    else {
+                        // Boosted pay.
+
+                        double boosted = this.pay + (this.pay * (.10));
+                        // System.out.println(boosted);
+                        // overtime hours.
+                        double overtime = hours - 40;
+                        // Pay for first 40 hours.
+                        double first_forty = 40 * boosted;
+                        double OT_pay = overtime * (boosted* 1.5);
+
+                        paycheck = OT_pay + first_forty;
+                        break;
+                    }
+            }
+        }
+
+        // Display information.
+        System.out.println(this.name);
+        System.out.println("Position: " + this.position);
+        System.out.println("Salary Employee: " + this.salary);
+        System.out.println("Rate of pay: $" + this.pay + " per hour.");
+        System.out.println(this.name + " earned $" + paycheck );
+        System.out.println("\n");
+    }
+}
