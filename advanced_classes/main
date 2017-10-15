@@ -1,8 +1,18 @@
 package com.objects.java;
 
+/**
+ * Create instances of the Employee object, as well as calculate pay and display
+ * all user information.
+ *
+ */
 public class Main {
 
+    /**
+     * Main method sending required arguments to connected classes.
+     * @param args The class contains a kwarg.
+     */
     public static void main(String[] args) {
+
        Employee emp1 = new Employee("Jane Doe", employeeType.ADMINISTRATION, true, 27.00, 1, "10/6/17");
        emp1.calculate(45.00);
 
