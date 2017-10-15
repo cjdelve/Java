@@ -1,6 +1,10 @@
 package com.objects.java;
 
+/**
+ * enum employeeType: Enumeration class accepting work type.
+ */
 public enum employeeType {
+
     ADMINISTRATION("Administration"),PRODUCTION("Production"), SALES("Sales"),
     MAINTENANCE("Maintenance"), TECHNICAL("Technical"), SECRETARIAL("Secretarial");
     private String type;
